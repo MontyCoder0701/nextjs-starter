@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -24,7 +25,7 @@ export default function DefaultTemplate({ children }: { children: React.ReactNod
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <div className="text-gray-800">{isMobileMenuOpen ? "Close" : "Open"}</div>
+            {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
 
