@@ -20,10 +20,10 @@
 
 ## Preview
 ### Desktop
-<img width="1243" alt="Screenshot 2025-05-25 at 1 24 47 PM" src="https://github.com/user-attachments/assets/c810f3e8-2db5-404d-94ec-7dc1ea3b5e26" />
+<img width="1200" alt="Screenshot 2025-05-25 at 1 24 47 PM" src="https://github.com/user-attachments/assets/c810f3e8-2db5-404d-94ec-7dc1ea3b5e26" />
 
 ### Mobile
-<img width="492" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/f239fb81-99ae-4bcd-83c7-7304b9b5e306" />
+<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/f239fb81-99ae-4bcd-83c7-7304b9b5e306" />
 
 
 ## Notice
