@@ -1,10 +1,22 @@
 # Next JS Starter
 
 - This is a simple starter repo for Next.js projects.
-- Contains release please, dependabot for maintainance.
-- Set up Shadecn UI (and icons)
-- Uses basic template for sticky header and footer
-- Ready for responsive design (mobile)
+- You can use this for hackathons or external projects as a boilerplate.
+- Clone this and customize.
+
+## What's included
+
+### Github Actions
+
+- Release please
+- Dependabot and package validation
+- Basic CI (build, lint)
+
+### Design
+
+- Shadecn UI (and radix icons)
+- Basic template for sticky header and footer
+- Responsive design (mobile)
 
 ## Notice
 
