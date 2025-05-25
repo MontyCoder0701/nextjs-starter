@@ -8,12 +8,13 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 ### GitHub Actions
 
 - **Release Please** – automated release management  
-- **Dependabot** – automatic dependency updates  
+- **Dependabot** – automatic dependency updates
+- **Dependabot Validation** - automatic build check for dependabot PRs
 - **CI** – basic continuous integration for build and lint checks
 
 ### Design
 
-- **shadcn/ui** and **Radix Icons** for UI components  
+- [**shadcn/ui**](https://ui.shadcn.com) and [**Radix Icons**](https://www.radix-ui.com/icons) for UI components  
 - Basic layout with a sticky header and footer  
 - Mobile-responsive design
 
