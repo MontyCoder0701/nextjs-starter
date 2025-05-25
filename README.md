@@ -4,3 +4,7 @@
 - Contains release please, dependabot for maintainance.
 - Set up Shadecn UI (and icons)
 - Uses basic template for sticky header and footer
+
+## Notice
+
+- If you're using dependabot, make sure Settings > Actions > General > Allow GitHub Actions to create and approve pull requests is activated.  
