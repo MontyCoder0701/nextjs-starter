@@ -1,7 +1,8 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ChevronsUpDown, Menu, Moon, Sun, X } from "lucide-react";
 
@@ -20,7 +21,31 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { useTheme } from "@/lib/theme";
+
+function ThemeToggleButton() {
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const isDarkTheme = resolvedTheme === "dark" || false;
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted)
+    return (
+      <Button variant="outline">
+        <Sun />
+      </Button>
+    );
+
+  return (
+    <Button
+      onClick={() => setTheme(isDarkTheme ? "light" : "dark")}
+      variant="outline"
+      className="hover:cursor-pointer"
+    >
+      {isDarkTheme ? <Moon /> : <Sun />}
+    </Button>
+  );
+}
 
 export default function DefaultLayout({
   children,
@@ -29,7 +54,6 @@ export default function DefaultLayout({
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMenuItemOpen, setIsMenuItemOpen] = useState(false);
-  const { isLight, toggleTheme } = useTheme();
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -97,13 +121,7 @@ export default function DefaultLayout({
 
             {/* Other menu buttons */}
             <div className="flex gap-x-2">
-              <Button
-                onClick={toggleTheme}
-                variant="outline"
-                className="hover:cursor-pointer"
-              >
-                {isLight ? <Sun /> : <Moon />}
-              </Button>
+              <ThemeToggleButton />
 
               <Button
                 variant="ghost"
