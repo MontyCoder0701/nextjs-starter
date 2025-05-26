@@ -27,7 +27,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuItemOpen, setIsMenuItemOpen] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -56,6 +56,7 @@ export default function DefaultLayout({
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              {/* Regular menu item */}
               <NavigationMenuItem>
                 <NavigationMenuLink
                   className={navigationMenuTriggerStyle()}
@@ -104,7 +105,7 @@ export default function DefaultLayout({
         {isMobileMenuOpen && (
           <nav className="md:hidden px-4 pb-4">
             {/* Menu item for sub-menu */}
-            <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+            <Collapsible open={isMenuItemOpen} onOpenChange={setIsMenuItemOpen}>
               <CollapsibleTrigger asChild>
                 <Button
                   variant="ghost"
@@ -126,6 +127,7 @@ export default function DefaultLayout({
               </CollapsibleContent>
             </Collapsible>
 
+            {/* Regular menu item */}
             <Button
               asChild
               variant="ghost"
