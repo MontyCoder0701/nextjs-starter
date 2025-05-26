@@ -25,11 +25,11 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 
 ### Desktop
 
-<img width="1200" alt="Screenshot 2025-05-25 at 1 24 47 PM" src="https://github.com/user-attachments/assets/a4d0a16a-3e4c-4b96-8e57-0321d197efa6" />
+<img width="1200" alt="Screenshot 2025-05-25 at 1 24 47 PM" src="https://github.com/user-attachments/assets/32d25f86-015f-4dd2-913d-60859e5e56a7" />
 
 ### Mobile
 
-<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/390257dd-b65d-4320-8abc-728c24b0de1e" />
+<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/829d6c42-32c0-4cea-920d-1d0a74428127" />
 
 ## Notice
 
