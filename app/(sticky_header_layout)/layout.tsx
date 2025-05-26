@@ -76,25 +76,37 @@ export default function DefaultLayout({
 
         {isMobileMenuOpen && (
           <nav className="md:hidden px-2 pb-4 space-y-2 text-sm font-medium">
-            <Button variant="ghost" className="flex justify-start w-full">
+            <Button
+              variant="ghost"
+              className="flex justify-start w-full hover:cursor-pointer"
+            >
               <Link key={1} href="/">
                 Home
               </Link>
             </Button>
 
-            <Button variant="ghost" className="flex justify-start w-full">
+            <Button
+              variant="ghost"
+              className="flex justify-start w-full hover:cursor-pointer"
+            >
               <Link key={2} href="/page2">
                 Page 2
               </Link>
             </Button>
 
-            <Button variant="ghost" className="flex justify-start w-full">
+            <Button
+              variant="ghost"
+              className="flex justify-start w-full hover:cursor-pointer"
+            >
               <Link key={3} href="/page3">
                 Page 3
               </Link>
             </Button>
 
-            <Button variant="ghost" className="flex justify-start w-full">
+            <Button
+              variant="ghost"
+              className="flex justify-start w-full hover:cursor-pointer"
+            >
               <Link key={4} href="/page4">
                 Page 4
               </Link>
