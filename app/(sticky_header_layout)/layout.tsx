@@ -40,6 +40,7 @@ export default function DefaultLayout({
 
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
+              {/* Menu item for sub-menu */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Nav Trigger 1</NavigationMenuTrigger>
 
@@ -102,6 +103,7 @@ export default function DefaultLayout({
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
           <nav className="md:hidden px-4 pb-4">
+            {/* Menu item for sub-menu */}
             <Collapsible open={isOpen} onOpenChange={setIsOpen}>
               <CollapsibleTrigger asChild>
                 <Button
