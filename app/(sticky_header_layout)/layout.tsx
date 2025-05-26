@@ -32,7 +32,7 @@ export default function DefaultLayout({
   return (
     <div className="flex flex-col min-h-screen">
       {/* Sticky Header */}
-      <header className="sticky top-0 z-50 bg-white border-gray-200 shadow-sm">
+      <header className="sticky top-0 z-50 border shadow-sm">
         <div className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
           <Link href="/" className="flex items-center gap-2">
             Logo
@@ -159,7 +159,7 @@ export default function DefaultLayout({
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-gray-100 border-t border-gray-300 px-6 sm:px-10 py-8">
+      <footer className="w-full bg-muted border-t px-6 sm:px-10 py-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600">
           <div className="text-center sm:text-left">
             <a
