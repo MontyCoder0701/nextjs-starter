@@ -6,6 +6,15 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 export default function DefaultLayout({
   children,
@@ -23,31 +32,57 @@ export default function DefaultLayout({
             Logo
           </Link>
 
-          <nav className="hidden md:flex gap-6">
-            <Button variant="ghost" className="hover:cursor-pointer">
-              <Link key={1} href="/">
-                Home
-              </Link>
-            </Button>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Nav Trigger 1</NavigationMenuTrigger>
 
-            <Button variant="ghost" className="hover:cursor-pointer">
-              <Link key={2} href="/page2">
-                Page 2
-              </Link>
-            </Button>
+                <NavigationMenuContent>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    asChild
+                  >
+                    <Link key={1} href="/" passHref>
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <Button variant="ghost" className="hover:cursor-pointer">
-              <Link key={3} href="/page3">
-                Page 3
-              </Link>
-            </Button>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link key={2} href="/page2" passHref>
+                    Page 2
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
-            <Button variant="ghost" className="hover:cursor-pointer">
-              <Link key={4} href="/page4">
-                Page 4
-              </Link>
-            </Button>
-          </nav>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link key={3} href="/page3" passHref>
+                    Page 3
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  asChild
+                >
+                  <Link key={4} href="/page4" passHref>
+                    Page 4
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           <button
             className="md:hidden"
