@@ -5,6 +5,14 @@ import { useState } from "react";
 
 import { Menu, X } from "lucide-react";
 
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+
 export default function DefaultLayout({
   children,
 }: {
@@ -21,23 +29,41 @@ export default function DefaultLayout({
             Logo
           </Link>
 
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <Link key={1} href="/" className="hover:underline">
-              Home
-            </Link>
+          <NavigationMenu className="hidden md:flex gap-6">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link key={1} href="/" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Home
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-            <Link key={2} href="/page2" className="hover:underline">
-              Page 2
-            </Link>
+              <NavigationMenuItem>
+                <Link key={2} href="/page2" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Page 2
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-            <Link key={3} href="/page3" className="hover:underline">
-              Page 3
-            </Link>
+              <NavigationMenuItem>
+                <Link key={3} href="/page3" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Page 3
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-            <Link key={4} href="/page4" className="hover:underline">
-              Page 4
-            </Link>
-          </nav>
+              <NavigationMenuItem>
+                <Link key={4} href="/page4" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Page 4
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           <button
             className="md:hidden"
@@ -49,23 +75,41 @@ export default function DefaultLayout({
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden px-6 pb-4 space-y-2 text-sm font-medium">
-            <Link key={1} href="/" className="block hover:underline">
-              Home
-            </Link>
+          <NavigationMenu className="md:hidden px-2 pb-4">
+            <NavigationMenuList className="flex flex-col space-y-2">
+              <NavigationMenuItem>
+                <Link key={1} href="/" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Home
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-            <Link key={2} href="/page2" className="block hover:underline">
-              Page 2
-            </Link>
+              <NavigationMenuItem>
+                <Link key={2} href="/page2" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Page 2
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-            <Link key={3} href="/page3" className="block hover:underline">
-              Page 3
-            </Link>
+              <NavigationMenuItem>
+                <Link key={3} href="/page3" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Page 3
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-            <Link key={4} href="/page4" className="hover:underline">
-              Page 4
-            </Link>
-          </div>
+              <NavigationMenuItem>
+                <Link key={4} href="/page4" passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Page 4
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         )}
       </header>
 
