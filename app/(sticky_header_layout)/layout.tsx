@@ -3,9 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { Menu, X } from "lucide-react";
+import { ChevronsUpDown, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,6 +27,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -42,7 +48,7 @@ export default function DefaultLayout({
                     className={navigationMenuTriggerStyle()}
                     asChild
                   >
-                    <Link key={1} href="/" passHref>
+                    <Link href="/" passHref>
                       Home
                     </Link>
                   </NavigationMenuLink>
@@ -54,7 +60,7 @@ export default function DefaultLayout({
                   className={navigationMenuTriggerStyle()}
                   asChild
                 >
-                  <Link key={2} href="/page2" passHref>
+                  <Link href="/page2" passHref>
                     Page 2
                   </Link>
                 </NavigationMenuLink>
@@ -65,7 +71,7 @@ export default function DefaultLayout({
                   className={navigationMenuTriggerStyle()}
                   asChild
                 >
-                  <Link key={3} href="/page3" passHref>
+                  <Link href="/page3" passHref>
                     Page 3
                   </Link>
                 </NavigationMenuLink>
@@ -76,7 +82,7 @@ export default function DefaultLayout({
                   className={navigationMenuTriggerStyle()}
                   asChild
                 >
-                  <Link key={4} href="/page4" passHref>
+                  <Link href="/page4" passHref>
                     Page 4
                   </Link>
                 </NavigationMenuLink>
@@ -93,42 +99,57 @@ export default function DefaultLayout({
           </button>
         </div>
 
+        {/* Mobile Nav */}
         {isMobileMenuOpen && (
           <nav className="md:hidden px-2 pb-4 space-y-2">
+            <Collapsible
+              open={isOpen}
+              onOpenChange={setIsOpen}
+              className="space-y-2"
+            >
+              <CollapsibleTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="flex justify-between w-full hover:cursor-pointer"
+                >
+                  <span>Nav Trigger 1</span>
+                  <ChevronsUpDown className="h-4 w-4" />
+                </Button>
+              </CollapsibleTrigger>
+
+              <CollapsibleContent className="space-y-2 px-6">
+                <Button
+                  asChild
+                  variant="ghost"
+                  className="flex justify-start w-full hover:cursor-pointer"
+                >
+                  <Link href="/">Page 1</Link>
+                </Button>
+              </CollapsibleContent>
+            </Collapsible>
+
             <Button
+              asChild
               variant="ghost"
               className="flex justify-start w-full hover:cursor-pointer"
             >
-              <Link key={1} href="/">
-                Home
-              </Link>
+              <Link href="/page2">Page 2</Link>
             </Button>
 
             <Button
+              asChild
               variant="ghost"
               className="flex justify-start w-full hover:cursor-pointer"
             >
-              <Link key={2} href="/page2">
-                Page 2
-              </Link>
+              <Link href="/page3">Page 3</Link>
             </Button>
 
             <Button
+              asChild
               variant="ghost"
               className="flex justify-start w-full hover:cursor-pointer"
             >
-              <Link key={3} href="/page3">
-                Page 3
-              </Link>
-            </Button>
-
-            <Button
-              variant="ghost"
-              className="flex justify-start w-full hover:cursor-pointer"
-            >
-              <Link key={4} href="/page4">
-                Page 4
-              </Link>
+              <Link href="/page4">Page 4</Link>
             </Button>
           </nav>
         )}
