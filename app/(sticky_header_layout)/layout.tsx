@@ -32,7 +32,7 @@ export default function DefaultLayout({
             Logo
           </Link>
 
-          <NavigationMenu>
+          <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Nav Trigger 1</NavigationMenuTrigger>
