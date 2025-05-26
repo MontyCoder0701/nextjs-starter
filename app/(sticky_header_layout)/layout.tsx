@@ -29,12 +29,13 @@ function ThemeToggleButton() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted)
+  if (!mounted) {
     return (
       <Button variant="outline">
         <Sun />
       </Button>
     );
+  }
 
   return (
     <Button
