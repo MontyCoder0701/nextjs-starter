@@ -119,7 +119,7 @@ export default function DefaultLayout({
                   variant="ghost"
                   className="flex justify-start w-full hover:cursor-pointer"
                 >
-                  <Link href="/">Page 1</Link>
+                  <Link href="/">Home</Link>
                 </Button>
               </CollapsibleContent>
             </Collapsible>
