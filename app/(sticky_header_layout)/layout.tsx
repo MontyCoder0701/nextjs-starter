@@ -6,12 +6,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 
 export default function DefaultLayout({
   children,
@@ -29,41 +23,31 @@ export default function DefaultLayout({
             Logo
           </Link>
 
-          <NavigationMenu className="hidden md:flex gap-6">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link key={1} href="/" passHref>
-                    Home
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+          <nav className="hidden md:flex gap-6">
+            <Button variant="ghost" className="hover:cursor-pointer">
+              <Link key={1} href="/">
+                Home
+              </Link>
+            </Button>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link key={2} href="/page2" passHref>
-                    Page 2
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+            <Button variant="ghost" className="hover:cursor-pointer">
+              <Link key={2} href="/page2">
+                Page 2
+              </Link>
+            </Button>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link key={3} href="/page3" passHref>
-                    Page 3
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+            <Button variant="ghost" className="hover:cursor-pointer">
+              <Link key={3} href="/page3">
+                Page 3
+              </Link>
+            </Button>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link key={4} href="/page4" passHref>
-                    Page 4
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+            <Button variant="ghost" className="hover:cursor-pointer">
+              <Link key={4} href="/page4">
+                Page 4
+              </Link>
+            </Button>
+          </nav>
 
           <button
             className="md:hidden"
@@ -75,7 +59,7 @@ export default function DefaultLayout({
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="md:hidden px-2 pb-4 space-y-2 text-sm font-medium">
+          <nav className="md:hidden px-2 pb-4 space-y-2">
             <Button
               variant="ghost"
               className="flex justify-start w-full hover:cursor-pointer"
