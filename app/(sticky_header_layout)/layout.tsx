@@ -33,6 +33,10 @@ export default function DefaultLayout({
             <Link key={3} href="/page3" className="hover:underline">
               Page 3
             </Link>
+
+            <Link key={4} href="/page4" className="hover:underline">
+              Page 4
+            </Link>
           </nav>
 
           <button
@@ -56,6 +60,10 @@ export default function DefaultLayout({
 
             <Link key={3} href="/page3" className="block hover:underline">
               Page 3
+            </Link>
+
+            <Link key={4} href="/page4" className="hover:underline">
+              Page 4
             </Link>
           </div>
         )}
