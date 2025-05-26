@@ -101,12 +101,8 @@ export default function DefaultLayout({
 
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden px-2 pb-4 space-y-2">
-            <Collapsible
-              open={isOpen}
-              onOpenChange={setIsOpen}
-              className="space-y-2"
-            >
+          <nav className="md:hidden px-4 pb-4">
+            <Collapsible open={isOpen} onOpenChange={setIsOpen}>
               <CollapsibleTrigger asChild>
                 <Button
                   variant="ghost"
