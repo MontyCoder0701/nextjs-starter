@@ -15,9 +15,9 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 ### Design
 
 - [**shadcn/ui**](https://ui.shadcn.com) and [**Radix Icons**](https://www.radix-ui.com/icons) for UI components
-- Basic layout with a sticky header and footer
+- Basic layout with a sticky header (with navigation menu) and footer
 - Customizable empty layout
-- Mobile-responsive design
+- Mobile-responsive design including drawer navigation
 
 ## Preview
 
@@ -29,7 +29,7 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 
 ### Mobile
 
-<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/829d6c42-32c0-4cea-920d-1d0a74428127" />
+<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/fa4905d5-f7ff-4f47-9e46-6fa020b7796f" />
 
 ## Notice
 
