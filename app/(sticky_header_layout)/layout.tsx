@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { ChevronsUpDown, Menu, X } from "lucide-react";
+import { ChevronsUpDown, Menu, Moon, Sun, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +20,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useTheme } from "@/lib/theme";
 
 export default function DefaultLayout({
   children,
@@ -28,6 +29,7 @@ export default function DefaultLayout({
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMenuItemOpen, setIsMenuItemOpen] = useState(false);
+  const { isLight, toggleTheme } = useTheme();
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -38,67 +40,81 @@ export default function DefaultLayout({
             Logo
           </Link>
 
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList>
-              {/* Menu item for sub-menu */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Nav Trigger 1</NavigationMenuTrigger>
+          <div className="flex gap-x-4">
+            <NavigationMenu className="hidden md:flex gap-x-4">
+              <NavigationMenuList>
+                {/* Menu item for sub-menu */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Nav Trigger 1</NavigationMenuTrigger>
 
-                <NavigationMenuContent>
+                  <NavigationMenuContent>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <Link href="/" passHref>
+                        Home
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Regular menu item */}
+                <NavigationMenuItem>
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                     asChild
                   >
-                    <Link href="/" passHref>
-                      Home
+                    <Link href="/page2" passHref>
+                      Page 2
                     </Link>
                   </NavigationMenuLink>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                </NavigationMenuItem>
 
-              {/* Regular menu item */}
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link href="/page2" passHref>
-                    Page 2
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    asChild
+                  >
+                    <Link href="/page3" passHref>
+                      Page 3
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link href="/page3" passHref>
-                    Page 3
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    asChild
+                  >
+                    <Link href="/page4" passHref>
+                      Page 4
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link href="/page4" passHref>
-                    Page 4
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+            {/* Other menu buttons */}
+            <div className="flex gap-x-2">
+              <Button
+                onClick={toggleTheme}
+                variant="outline"
+                className="hover:cursor-pointer"
+              >
+                {isLight ? <Sun /> : <Moon />}
+              </Button>
 
-          <button
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
+              <Button
+                variant="ghost"
+                className="md:hidden hover:cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? <X /> : <Menu />}
+              </Button>
+            </div>
+          </div>
         </div>
 
         {/* Mobile Nav */}
@@ -162,7 +178,7 @@ export default function DefaultLayout({
 
       {/* Footer */}
       <footer className="w-full bg-muted border-t px-6 sm:px-10 py-8">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-center sm:text-left">
             <a
               className="font-semibold hover:underline"
