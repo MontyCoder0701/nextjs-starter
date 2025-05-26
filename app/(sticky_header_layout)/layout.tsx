@@ -5,12 +5,12 @@ import { useState } from "react";
 
 import { Menu, X } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 export default function DefaultLayout({
@@ -32,10 +32,7 @@ export default function DefaultLayout({
           <NavigationMenu className="hidden md:flex gap-6">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
+                <NavigationMenuLink asChild>
                   <Link key={1} href="/" passHref>
                     Home
                   </Link>
@@ -43,10 +40,7 @@ export default function DefaultLayout({
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
+                <NavigationMenuLink asChild>
                   <Link key={2} href="/page2" passHref>
                     Page 2
                   </Link>
@@ -54,10 +48,7 @@ export default function DefaultLayout({
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
+                <NavigationMenuLink asChild>
                   <Link key={3} href="/page3" passHref>
                     Page 3
                   </Link>
@@ -65,10 +56,7 @@ export default function DefaultLayout({
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
+                <NavigationMenuLink asChild>
                   <Link key={4} href="/page4" passHref>
                     Page 4
                   </Link>
@@ -87,53 +75,31 @@ export default function DefaultLayout({
         </div>
 
         {isMobileMenuOpen && (
-          <NavigationMenu className="md:hidden px-2 pb-4">
-            <NavigationMenuList className="flex flex-col space-y-2">
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link key={1} href="/" passHref>
-                    Home
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+          <nav className="md:hidden px-2 pb-4 space-y-2 text-sm font-medium">
+            <Button variant="ghost" className="flex justify-start w-full">
+              <Link key={1} href="/">
+                Home
+              </Link>
+            </Button>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link key={2} href="/page2" passHref>
-                    Page 2
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+            <Button variant="ghost" className="flex justify-start w-full">
+              <Link key={2} href="/page2">
+                Page 2
+              </Link>
+            </Button>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link key={3} href="/page3" passHref>
-                    Page 3
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+            <Button variant="ghost" className="flex justify-start w-full">
+              <Link key={3} href="/page3">
+                Page 3
+              </Link>
+            </Button>
 
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  asChild
-                >
-                  <Link key={4} href="/page4" passHref>
-                    Page 4
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+            <Button variant="ghost" className="flex justify-start w-full">
+              <Link key={4} href="/page4">
+                Page 4
+              </Link>
+            </Button>
+          </nav>
         )}
       </header>
 
