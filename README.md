@@ -18,6 +18,7 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 - Basic layout with a sticky header (with navigation menu) and footer
 - Customizable empty layout
 - Mobile-responsive design including drawer navigation
+- Theme (light, dark) preserved with local storage
 
 ## Preview
 
@@ -25,11 +26,11 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 
 ### Desktop
 
-<img width="1200" alt="Screenshot 2025-05-25 at 1 24 47 PM" src="https://github.com/user-attachments/assets/32d25f86-015f-4dd2-913d-60859e5e56a7" />
+<img width="1200" alt="Screenshot 2025-05-25 at 1 24 47 PM" src="https://github.com/user-attachments/assets/4b40eaf9-d2cc-4f17-af3b-bca070d0e430" />
 
 ### Mobile
 
-<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/fa4905d5-f7ff-4f47-9e46-6fa020b7796f" />
+<img width="400" alt="Screenshot 2025-05-25 at 1 25 05 PM" src="https://github.com/user-attachments/assets/a0341299-5b0d-407f-a28e-743fc68e430b" />
 
 ## Notice
 
