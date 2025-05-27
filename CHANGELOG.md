@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/MontyCoder0701/nextjs-starter/compare/v1.0.1...v1.0.2) (2025-05-27)
+
+
+### Bug Fixes
+
+* 테마 설정 추가 ([732d4e4](https://github.com/MontyCoder0701/nextjs-starter/commit/732d4e4fa621b4bc88623e5d1a60b2b7aa46b3fd))
+
 ## [1.0.1](https://github.com/MontyCoder0701/nextjs-starter/compare/v1.0.0...v1.0.1) (2025-05-26)
 
 
