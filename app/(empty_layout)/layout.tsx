@@ -1,4 +1,4 @@
-export default function DefaultLayout({
+export default function EmptyLayout({
   children,
 }: {
   children: React.ReactNode;

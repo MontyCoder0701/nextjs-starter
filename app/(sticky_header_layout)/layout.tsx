@@ -48,7 +48,7 @@ function ThemeToggleButton() {
   );
 }
 
-export default function DefaultLayout({
+export default function StickyHeaderLayout({
   children,
 }: {
   children: React.ReactNode;
