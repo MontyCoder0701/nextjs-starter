@@ -2,6 +2,8 @@
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { ChevronsUpDown, Menu, Moon, Sun, X } from "lucide-react";
@@ -22,10 +24,47 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+function LocaleToggleButton() {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  const toggleLocale = () => {
+    router.push(
+      pathname.replace(`/${locale}`, locale === "en" ? "/ko" : "/en")
+    );
+  };
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return (
+      <Button variant="outline">
+        LANG
+      </Button>
+    );
+  }
+
+  return (
+    <Button
+      onClick={toggleLocale}
+      variant="outline"
+      className="hover:cursor-pointer"
+    >
+      {locale.toUpperCase()}
+    </Button>
+  );
+}
+
 function ThemeToggleButton() {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const isDarkTheme = resolvedTheme === "dark" || false;
+
+  const toggleTheme = () => {
+    setTheme(isDarkTheme ? "light" : "dark");
+  };
 
   useEffect(() => setMounted(true), []);
 
@@ -39,7 +78,7 @@ function ThemeToggleButton() {
 
   return (
     <Button
-      onClick={() => setTheme(isDarkTheme ? "light" : "dark")}
+      onClick={toggleTheme}
       variant="outline"
       className="hover:cursor-pointer"
     >
@@ -123,6 +162,8 @@ export default function StickyHeaderLayout({
             {/* Other menu buttons */}
             <div className="flex gap-x-2">
               <ThemeToggleButton />
+
+              <LocaleToggleButton />
 
               <Button
                 variant="ghost"
