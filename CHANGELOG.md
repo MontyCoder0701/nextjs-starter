@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.0](https://github.com/MontyCoder0701/nextjs-starter/compare/v1.0.2...v1.1.0) (2025-05-28)
+
+
+### Features
+
+* apply translation ([9b62202](https://github.com/MontyCoder0701/nextjs-starter/commit/9b62202a00e928b8ff97d6b00df5d667f23711a9))
+* setup lang ([88bbdf4](https://github.com/MontyCoder0701/nextjs-starter/commit/88bbdf42e0ea18da57d4a6607745aaae135425b2))
+* 언어 지원 ([7e4ad9d](https://github.com/MontyCoder0701/nextjs-starter/commit/7e4ad9d681a630f77e79b22bc8a3b5c99f0d5179))
+
+
+### Bug Fixes
+
+* add toggle button ([a80e25d](https://github.com/MontyCoder0701/nextjs-starter/commit/a80e25d1856d65a62b68732fcc6ac059f20b9805))
+* apply translation ([1511ab9](https://github.com/MontyCoder0701/nextjs-starter/commit/1511ab96555ac37bb0313662f6a15fb469566094))
+
 ## [1.0.2](https://github.com/MontyCoder0701/nextjs-starter/compare/v1.0.1...v1.0.2) (2025-05-27)
 
 
