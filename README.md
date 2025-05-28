@@ -12,6 +12,10 @@ Use it for hackathons or external projects as a boilerplate — clone and custom
 - **Dependabot Validation** - automatic build check for dependabot PRs
 - **CI** – basic continuous integration for build and lint checks
 
+### Locale
+
+- [**next-intl**](https://next-intl.dev/) - translation with app router (i18n routing) 
+  
 ### Design
 
 - [**shadcn/ui**](https://ui.shadcn.com) and [**Radix Icons**](https://www.radix-ui.com/icons) for UI components
