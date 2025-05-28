@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 function LocaleToggleButton() {
+  const tr = useTranslations('header');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -41,7 +42,7 @@ function LocaleToggleButton() {
   if (!mounted) {
     return (
       <Button variant="outline">
-        LANG
+        {`${tr("locale")} LANG`}
       </Button>
     );
   }
@@ -52,7 +53,7 @@ function LocaleToggleButton() {
       variant="outline"
       className="hover:cursor-pointer"
     >
-      {locale.toUpperCase()}
+      {`${tr("locale")} ${locale.toUpperCase()}`}
     </Button>
   );
 }
