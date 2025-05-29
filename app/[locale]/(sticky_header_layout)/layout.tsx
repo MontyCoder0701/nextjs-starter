@@ -1,8 +1,7 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -23,9 +22,10 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Link } from "@/i18n/navigation";
 
 function LocaleToggleButton() {
-  const tr = useTranslations('header');
+  const tr = useTranslations("header");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -40,11 +40,7 @@ function LocaleToggleButton() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return (
-      <Button variant="outline">
-        {`${tr("locale")} LANG`}
-      </Button>
-    );
+    return <Button variant="outline">{`${tr("locale")} LANG`}</Button>;
   }
 
   return (

@@ -9,8 +9,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requested
     : routing.defaultLocale;
 
-  console.log("Locale from middleware:", locale);
-
   return {
     locale,
     messages: (await import(`./dictionary/${locale}.json`)).default,
